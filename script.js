@@ -81,3 +81,17 @@ navLinks.forEach(link => {
     }
   });
 });
+// Skill Tabs Switch
+const tabs = document.querySelectorAll(".tab");
+const categories = document.querySelectorAll(".skill-category");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(t => t.classList.remove("active"));
+    categories.forEach(c => c.classList.remove("active"));
+
+    tab.classList.add("active");
+    const target = document.getElementById(tab.dataset.category);
+    target.classList.add("active");
+  });
+});
